@@ -1,4 +1,4 @@
-type VariantKey = "flagship" | "ecosystem" | "partner" | "editorial";
+type VariantKey = "flagship" | "ecosystem" | "partner" | "editorial" | "hybrid" | "operator";
 
 type Variant = {
   key: VariantKey;
@@ -29,7 +29,66 @@ type Variant = {
 
 const navItems = ["About", "Events", "Partners", "Community", "Willpower HQ", "Join"];
 
+const variantOrder: VariantKey[] = ["hybrid", "flagship", "ecosystem", "partner", "operator", "editorial"];
+
 const variants: Record<VariantKey, Variant> = {
+  hybrid: {
+    key: "hybrid",
+    label: "Variant E",
+    testAngle: "Hybrid winner: community thesis up top, flagship proof right behind it",
+    heroEyebrow: "Community • Flagship events • Partner access",
+    heroTitle: "Willpower is the community modern consumer brands plug into when they want better rooms, better people, and better momentum.",
+    heroBody:
+      "We bring founders, operators, strategic partners, and rising talent into the same orbit through flagship events like Wellness House, curated introductions, and a media layer that keeps the right relationships warm between gatherings.",
+    heroCards: [
+      { title: "Why it feels different", body: "Willpower sells belonging to the ecosystem first. The events prove it. The media keeps it alive." },
+      { title: "Why it converts", body: "Partners get premium access, founders get real relationships, and the brand feels bigger than a one-night event company." },
+    ],
+    proofStats: [
+      { value: "30+", label: "events + experiences hosted" },
+      { value: "4,000+", label: "people reached across the network" },
+      { value: "$1M+", label: "opportunity generated" },
+      { value: "3", label: "core layers: events, community, media" },
+    ],
+    sectionIntroLabel: "The thesis",
+    sectionIntroTitle: "Willpower is the community. The events are the vehicle.",
+    sectionIntroBody: [
+      "That is the cleanest version of the story, and it is the one worth protecting on the homepage.",
+      "Wellness House is the flagship proof point because it shows the taste, people, and commercial energy Willpower can create when the room is curated well.",
+      "But the real asset is the repeated relationship layer across flagship events, smaller formats, curated intros, and Willpower HQ. That is what makes this feel like an ecosystem instead of a calendar.",
+    ],
+    pillars: [
+      { title: "Flagship experiences", body: "Wellness House and future tentpoles create the gravity, signal, and premium brand association that pull the right people in." },
+      { title: "Compounding relationships", body: "The same high-quality founders, operators, and partners keep running into each other in ways that actually create business value." },
+      { title: "Willpower HQ", body: "The editorial and newsletter layer keeps the network active between events with updates, invitations, and the people worth tracking early." },
+    ],
+    flagshipTitle: "Wellness House proves the brand already works in the real world.",
+    flagshipBody:
+      "The homepage should make Wellness House feel like the strongest expression of a larger platform: premium setting, sharp guest mix, strong partner value, and conversations that keep going after the event ends.",
+    partnerTitle: "For the right partner, Willpower is not booth space. It is repeated access to the right room.",
+    partnerBody:
+      "The best partner story here is premium association plus compounding access: founders worth meeting, operators worth knowing, and multiple touchpoints across the year instead of a one-off logo placement.",
+    partnerBullets: [
+      "Direct access to founders, operators, and brand leaders",
+      "Premium association through flagship experiences and curated rooms",
+      "Repeated touchpoints across events, intros, and media",
+      "A cleaner business-development motion than standard conference sponsorship",
+    ],
+    audienceLabel: "Who this is built for",
+    audienceTitle: "The room gets stronger because the people inside it actually matter to each other.",
+    audience: [
+      { title: "Founders", body: "Meet peers, operators, and strategic partners who can actually move your company forward." },
+      { title: "Operators", body: "Get into smarter conversations with the people shaping ecommerce, growth, retention, and brand." },
+      { title: "Strategic partners", body: "Show up in a context that feels intentional, premium, and aligned with the brands you want to build with." },
+      { title: "Talent + connectors", body: "Stay close to the companies, invitations, and relationships shaping what is next in consumer." },
+    ],
+    hqTitle: "Willpower HQ keeps the room alive between events.",
+    hqBody:
+      "Join for event drops, founder signal, operator conversations, and the people worth paying attention to before everyone else catches up.",
+    finalTitle: "Want to be part of it?",
+    finalBody:
+      "Attend an event, partner with Willpower, or join Willpower HQ to stay close to the ecosystem shaping the next generation of consumer brands.",
+  },
   flagship: {
     key: "flagship",
     label: "Variant A",
@@ -201,6 +260,63 @@ const variants: Record<VariantKey, Variant> = {
     finalBody:
       "If you want to partner, attend, or get closer to the people building modern consumer brands, Willpower gives you a stronger way in.",
   },
+  operator: {
+    key: "operator",
+    label: "Variant F",
+    testAngle: "Operator-first framing aimed at founders and high-value attendees",
+    heroEyebrow: "Founders • Operators • Consumer brands",
+    heroTitle: "Willpower is where the people building modern consumer brands go to stay close to what is actually moving.",
+    heroBody:
+      "Founders, operators, strategic partners, and sharp talent come into Willpower for real relationships, premium events, and the signal that matters before it becomes obvious to everyone else.",
+    heroCards: [
+      { title: "For operators", body: "Better peers, better conversations, and better context than another generic industry event." },
+      { title: "For founders", body: "A room built for trust, introductions, and momentum — not random foot traffic." },
+    ],
+    proofStats: [
+      { value: "30+", label: "curated experiences" },
+      { value: "4,000+", label: "people in the Willpower orbit" },
+      { value: "200+", label: "high-signal people in flagship rooms" },
+      { value: "$1M+", label: "opportunity created across the network" },
+    ],
+    sectionIntroLabel: "Why people come back",
+    sectionIntroTitle: "The value is not just the event. It is who keeps showing up after it.",
+    sectionIntroBody: [
+      "Willpower works when the room feels sharp, warm, and commercially useful at the same time.",
+      "That is why Wellness House matters. It is a flagship expression of the brand, but the larger value comes from repeated access to the same ecosystem across future events, intros, and Willpower HQ.",
+      "This version tests whether leading with attendee desire creates stronger pull for applications, newsletter signups, and word-of-mouth growth.",
+    ],
+    pillars: [
+      { title: "Better rooms", body: "A tighter guest mix creates stronger conversations, better intros, and more reasons to come back." },
+      { title: "Real signal", body: "Willpower helps people stay close to the founders, operators, and brands shaping where consumer is going next." },
+      { title: "Ongoing access", body: "The relationship does not end when the event does. The media and community layer keep things moving." },
+    ],
+    flagshipTitle: "Wellness House makes the promise tangible.",
+    flagshipBody:
+      "When the flagship looks and feels right, the rest of the Willpower brand feels more credible. This route is strongest if the homepage needs to attract the right attendees first and let partner demand follow that energy.",
+    partnerTitle: "Partners benefit because the attendee story is strong.",
+    partnerBody:
+      "A homepage that clearly sells the quality of the room can still support partners — especially the ones who understand that better audiences beat louder branding every time.",
+    partnerBullets: [
+      "A sharper room creates stronger partner demand",
+      "High-quality attendee mix improves sponsor perception",
+      "The brand feels selective instead of salesy",
+      "Good option if Bill wants to build long-term gravity first",
+    ],
+    audienceLabel: "Who belongs here",
+    audienceTitle: "Built for people who want the right network, not just another ticketed event.",
+    audience: [
+      { title: "Founders", body: "Meet peers, collaborators, and partners who can actually change the trajectory of your brand." },
+      { title: "Operators", body: "Stay close to the smartest people in growth, retention, ecommerce, and brand." },
+      { title: "Strategic partners", body: "Get near the brands and operators you genuinely want long-term relationships with." },
+      { title: "Talent", body: "Find the companies, leaders, and conversations worth betting your next chapter on." },
+    ],
+    hqTitle: "Willpower HQ is how people stay in the loop.",
+    hqBody:
+      "Get event drops, operator signal, and the invitations, people, and brand movement worth tracking between physical gatherings.",
+    finalTitle: "Get closer to the room.",
+    finalBody:
+      "Attend, join Willpower HQ, or explore partnership if you want to be part of the ecosystem shaping modern consumer brands.",
+  },
   editorial: {
     key: "editorial",
     label: "Variant D",
@@ -260,7 +376,7 @@ const variants: Record<VariantKey, Variant> = {
   },
 };
 
-const defaultVariant: VariantKey = "flagship";
+const defaultVariant: VariantKey = "hybrid";
 
 export default async function Home({
   searchParams,
@@ -268,7 +384,8 @@ export default async function Home({
   searchParams?: Promise<{ v?: string }>;
 }) {
   const resolved = (await searchParams) ?? {};
-  const variantKey = (resolved.v as VariantKey) in variants ? (resolved.v as VariantKey) : defaultVariant;
+  const requestedVariant = resolved.v as VariantKey | undefined;
+  const variantKey = requestedVariant && requestedVariant in variants ? requestedVariant : defaultVariant;
   const variant = variants[variantKey];
 
   return (
@@ -290,6 +407,34 @@ export default async function Home({
             Partner With Willpower
           </a>
         </header>
+
+        <div className="mt-6 rounded-[2rem] border border-white/10 bg-black/20 p-4 backdrop-blur">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-amber-200">Homepage experiment batch</p>
+              <p className="mt-2 text-sm text-stone-300">Morning preview links for Bill. Default loads the strongest hybrid thesis.</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {variantOrder.map((key) => {
+                const item = variants[key];
+                const active = key === variantKey;
+                return (
+                  <a
+                    key={key}
+                    href={`/?v=${key}`}
+                    className={`rounded-full px-4 py-2 text-sm transition ${
+                      active
+                        ? "bg-amber-300 text-stone-950"
+                        : "border border-white/10 bg-white/5 text-stone-200 hover:border-white/20 hover:bg-white/10"
+                    }`}
+                  >
+                    {item.label} {key === "hybrid" ? "• recommended" : ""}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         <div className="mt-8 flex flex-wrap gap-3 text-xs uppercase tracking-[0.22em] text-stone-300">
           <span className="rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-amber-200">{variant.label}</span>
@@ -357,6 +502,18 @@ export default async function Home({
       </section>
 
       <section id="events" className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-12">
+        <div className="mb-8 flex flex-wrap gap-3 text-xs uppercase tracking-[0.22em] text-stone-300">
+          {[
+            "Wellness House",
+            "Catalyst",
+            "World of Sports",
+            "Willpower HQ",
+          ].map((program) => (
+            <span key={program} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+              {program}
+            </span>
+          ))}
+        </div>
         <div className="grid gap-6 lg:grid-cols-3">
           {variant.pillars.map((item) => (
             <div key={item.title} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
@@ -384,7 +541,7 @@ export default async function Home({
             </div>
             <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
               <p className="text-sm uppercase tracking-[0.25em] text-stone-400">What we’re testing</p>
-              <p className="mt-3 text-xl leading-8 text-white">Different ways to position Willpower: flagship proof, ecosystem, partner value, and stronger editorial identity.</p>
+              <p className="mt-3 text-xl leading-8 text-white">Different ways to position Willpower: flagship proof, ecosystem, partner value, operator pull, and a new hybrid thesis that connects all three.</p>
             </div>
           </div>
         </div>
