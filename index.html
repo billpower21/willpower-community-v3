@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Willpower Community — Homepage Preview</title>
+    <style>
+      :root {
+        --bg: #070b18;
+        --bg-soft: #0f1733;
+        --card: #121b3d;
+        --text: #eef3ff;
+        --muted: #a7b5e3;
+        --line: #28376d;
+        --accent: #5ea2ff;
+        --accent-2: #7ff0d0;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 15% -10%, #253a80 0%, transparent 40%),
+          radial-gradient(circle at 95% 15%, #16456a 0%, transparent 28%),
+          var(--bg);
+        line-height: 1.5;
+      }
+
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 26px 18px 80px; }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .brand-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 0 14px rgba(94, 162, 255, 0.7);
+      }
+
+      .nav { display: flex; gap: 12px; flex-wrap: wrap; }
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.92rem;
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .nav a:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 11px;
+        padding: 10px 16px;
+        font-weight: 700;
+      }
+      .btn-primary {
+        color: #07142c;
+        background: linear-gradient(135deg, var(--accent), #86bbff);
+      }
+      .btn-secondary {
+        color: var(--text);
+        border: 1px solid #37529b;
+        background: rgba(255,255,255,0.03);
+      }
+
+      .hero {
+        background: linear-gradient(160deg, rgba(42,65,132,0.45), rgba(15,23,51,0.8));
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: clamp(22px, 4vw, 48px);
+      }
+      .eyebrow {
+        color: var(--accent-2);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        font-size: 0.72rem;
+      }
+      .hero h1 {
+        margin: 10px 0 12px;
+        font-size: clamp(2rem, 5.2vw, 3.8rem);
+        line-height: 1.07;
+      }
+      .hero p {
+        margin: 0;
+        max-width: 780px;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+      .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+
+      .kpis {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+      }
+      .kpi {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid #30457f;
+        border-radius: 12px;
+        padding: 12px;
+      }
+      .kpi strong { display: block; font-size: 1.18rem; }
+      .kpi span { color: var(--muted); font-size: 0.88rem; }
+
+      .section { margin-top: 34px; }
+      .section h2 { margin: 0 0 8px; font-size: 1.45rem; }
+      .section .sub { color: var(--muted); margin: 0 0 18px; }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 12px;
+      }
+      .card {
+        background: linear-gradient(180deg, #172456, var(--card));
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .card h3 { margin: 0 0 8px; font-size: 1.02rem; }
+      .card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+      .logos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+      }
+      .logo-box {
+        border: 1px dashed #3b508f;
+        border-radius: 12px;
+        padding: 14px;
+        text-align: center;
+        color: #c4d0f6;
+        background: rgba(255,255,255,0.02);
+        font-size: 0.86rem;
+      }
+
+      .quotes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 12px;
+      }
+      blockquote {
+        margin: 0;
+        background: #111a39;
+        border: 1px solid #2e4180;
+        border-radius: 14px;
+        padding: 16px;
+      }
+      blockquote p { margin: 0 0 8px; }
+      blockquote footer { color: var(--muted); font-size: 0.9rem; }
+
+      .cta {
+        margin-top: 34px;
+        background: linear-gradient(140deg, #20336d, #13224c);
+        border: 1px solid #39539a;
+        border-radius: 16px;
+        padding: 22px;
+        display: grid;
+        gap: 14px;
+      }
+      .cta form { display: flex; flex-wrap: wrap; gap: 8px; }
+      .cta input {
+        flex: 1;
+        min-width: 220px;
+        padding: 11px 12px;
+        border-radius: 10px;
+        border: 1px solid #4261ad;
+        background: rgba(0,0,0,0.2);
+        color: var(--text);
+      }
+      .cta button {
+        border: 0;
+        border-radius: 10px;
+        padding: 11px 14px;
+        font-weight: 700;
+        cursor: pointer;
+        color: #08122b;
+        background: linear-gradient(135deg, var(--accent), #95c5ff);
+      }
+
+      .contact {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        color: var(--muted);
+      }
+      .contact a { color: #9ec3ff; text-decoration: none; }
+
+      .foot {
+        margin-top: 34px;
+        padding-top: 14px;
+        border-top: 1px solid #1c2854;
+        color: #8797cb;
+        font-size: 0.87rem;
+      }
+
+      @media (max-width: 720px) {
+        .topbar { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brand"><span class="brand-dot"></span>Willpower Community</div>
+        <nav class="nav">
+          <a href="#what">What We Do</a>
+          <a href="#events">Events</a>
+          <a href="#partners">Partners</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow">Community + Wellness + Action</div>
+        <h1>Helping People Build Better Lives Through Meaningful Experiences.</h1>
+        <p>
+          This homepage preview is designed for conversion clarity: one dominant above-the-fold CTA,
+          clear trust signals, and structured pathways to events, partnerships, and newsletter growth.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#events">Join the Next Event</a>
+          <a class="btn btn-secondary" href="#contact">Partner With Us</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>40+</strong><span>Community Events Hosted</span></div>
+          <div class="kpi"><strong>12k+</strong><span>Attendees Engaged</span></div>
+          <div class="kpi"><strong>85+</strong><span>Brand/Operator Partners</span></div>
+          <div class="kpi"><strong>92%</strong><span>Positive Post-Event Feedback</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="what">
+        <h2>What We Do</h2>
+        <p class="sub">Three core engines that drive impact and growth.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Host High-Impact Events</h3>
+            <p>Curated gatherings, founder conversations, and wellness activations that create real connections.</p>
+          </article>
+          <article class="card">
+            <h3>Activate Partnerships</h3>
+            <p>We align brands with values-driven audiences through intentional, measurable programming.</p>
+          </article>
+          <article class="card">
+            <h3>Build Practical Resources</h3>
+            <p>Content and frameworks people can apply immediately in health, performance, and community building.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="events">
+        <h2>Events Hosted</h2>
+        <p class="sub">Preview structure for upcoming + featured events.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Founders & Wellness Summit</h3>
+            <p><strong>March 22</strong> · Miami · Keynotes, tactical sessions, and network-based accountability.</p>
+          </article>
+          <article class="card">
+            <h3>Operator Roundtable Series</h3>
+            <p><strong>April 4</strong> · NYC · Intimate operator-only discussions on execution and growth systems.</p>
+          </article>
+          <article class="card">
+            <h3>Community Performance Lab</h3>
+            <p><strong>April 18</strong> · Austin · Workshops on routines, recovery, and long-term sustainability.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="partners">
+        <h2>Trusted by Partners</h2>
+        <p class="sub">Logo placeholders (replace with final brand assets).</p>
+        <div class="logos">
+          <div class="logo-box">Partner Logo 1</div>
+          <div class="logo-box">Partner Logo 2</div>
+          <div class="logo-box">Partner Logo 3</div>
+          <div class="logo-box">Partner Logo 4</div>
+          <div class="logo-box">Partner Logo 5</div>
+          <div class="logo-box">Partner Logo 6</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Testimonials</h2>
+        <p class="sub">Social proof block for conversion confidence.</p>
+        <div class="quotes">
+          <blockquote>
+            <p>“Willpower events are rare: high signal, zero fluff, and immediate execution value.”</p>
+            <footer>— Community Founder</footer>
+          </blockquote>
+          <blockquote>
+            <p>“The partnership outcomes were measurable within weeks, not months.”</p>
+            <footer>— Brand Marketing Lead</footer>
+          </blockquote>
+          <blockquote>
+            <p>“This community genuinely changes behavior, not just motivation levels.”</p>
+            <footer>— Event Attendee</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="cta" id="newsletter">
+        <div>
+          <h2 style="margin:0 0 6px;">Get Weekly Insights</h2>
+          <p style="margin:0; color: var(--muted);">One practical email each week with event updates, frameworks, and high-impact ideas.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Preview only — form integration comes next.');">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 style="margin:0; color:var(--text);">Contact</h2>
+        <div>Email: <a href="mailto:hello@willpower.community">hello@willpower.community</a></div>
+        <div>Instagram: <a href="#">@willpowercommunity</a></div>
+        <div>Partnerships: <a href="#">Book a 15-min call</a></div>
+      </section>
+
+      <footer class="foot">
+        Standalone HTML preview for rapid iteration before full app implementation.
+      </footer>
+    </div>
+  </body>
+</html>
